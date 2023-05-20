@@ -3,6 +3,7 @@
 const express = require('express');
 const cors = require('cors');
 const customerRouter = require('./routes/customer');
+const orderRouter = require('./routes/order');
 
 const app = express();
 app.use(cors());
@@ -10,6 +11,8 @@ app.use(express.json());
 
 // DONE: get customerRouter working
 app.use(customerRouter);
+app.use(orderRouter);
+
 app.get('/', (req, res, next) => {
   res.status(200).send('proof of life');
 });
